@@ -1,6 +1,6 @@
 # Computing in Biotechnology
 
-Course materials. Everything here is free and open — no accounts required beyond a
+Course materials. Everything here is free and open-source; no accounts required beyond a
 Google account if you choose to work in Colab.
 
 ## Getting the files
@@ -10,7 +10,7 @@ will find again — Documents is good, Downloads is not.
 
 Keep the folder structure intact. The notebook looks for `fixtures/` sitting beside it.
 
-## Setting up (once, at the start of term)
+## Setting up (once, at the start of semester)
 
 You need **Miniforge** installed first: https://conda-forge.org/download/
 
