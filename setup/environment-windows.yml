@@ -1,0 +1,65 @@
+# Computational Biotechnology: From Sequence to Binding
+# ENVIRONMENT FOR WINDOWS
+#
+#   conda env create -f environment-windows.yml
+#   conda activate compbiotech
+#   jupyter lab
+#
+# WHAT IS DIFFERENT AND WHY
+# fpocket has no Windows build and bioconda ships no Windows packages at all.
+# That affects exactly two weeks:
+#
+#   Week 8  - the fpocket half of the pocket comparison. PrankWeb (web service)
+#             and the Foldseek web server work fine on Windows; only fpocket does not.
+#   Week 9  - the panel-wide pocket run. This is a batch job, so a web service
+#             is not an option.
+#   Week 11 - docking. AutoDock Vina has no Windows build by any route.
+#   Week 12 - the full screen, same reason.
+#
+# For those four weeks: open the notebook in Google Colab, which installs
+# everything for you. Weeks 11 and 12 are long jobs, so use the notebook's
+# checkpoint-and-resume cell - re-run it until it reports complete.
+#
+# Because this is now four weeks rather than two, WSL is worth serious
+# consideration: inside WSL your machine is Linux, every tool installs, and
+# all thirteen weeks run locally.
+#
+# If you would rather work locally throughout, install WSL (Windows Subsystem
+# for Linux), then use environment.yml inside it and treat your machine as Linux.
+
+name: compbiotech
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - pip
+
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+
+  - biopython>=1.85
+  - gemmi
+
+  - rdkit
+  - openbabel            # a Windows build does exist
+
+  # fpocket:  omitted - no Windows build. Weeks 8 and 9 run on Colab.
+  # foldseek: omitted - no Windows build. Use https://search.foldseek.com/search
+  # vina:     omitted - NO Windows build by any route. PyPI ships Linux-only wheels
+  #           (pip would try to compile it and fail on missing Boost), and
+  #           conda-forge builds it for macOS and Linux only. Weeks 11 and 12
+  #           therefore also run on Colab. See the header note above.
+
+  - pip:
+      - py3Dmol
+      - meeko            # file preparation; works on Windows even though vina does not
+      - prolif
+      - chembl-webresource-client
+      - fair-esm
+      # torch: install separately, CPU-only:
+      #   pip install torch --index-url https://download.pytorch.org/whl/cpu

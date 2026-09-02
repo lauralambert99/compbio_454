@@ -1,0 +1,55 @@
+# Computational Biotechnology: From Sequence to Binding
+# ENVIRONMENT FOR macOS (Intel or Apple Silicon) AND LINUX
+#
+#   conda env create -f environment.yml
+#   conda activate compbiotech
+#   jupyter lab
+#
+# Windows users: use environment-windows.yml instead. fpocket has no Windows
+# build, so Weeks 8 and 9 are run on Google Colab (or under WSL).
+
+name: compbiotech
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  # --- core Python -------------------------------------------------------
+  - python=3.11
+  - jupyterlab
+  - pip
+
+  # --- data and plotting -------------------------------------------------
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+
+  # --- sequences and structures ------------------------------------------
+  - biopython>=1.85
+  - gemmi
+
+  # --- chemistry ---------------------------------------------------------
+  - rdkit
+  - openbabel            # provides obabel and obrms (Week 11)
+
+  # --- external tools that pip cannot install ----------------------------
+  - fpocket              # Weeks 8, 9. conda-forge: linux-64, osx-64, osx-arm64
+  - vina                 # Weeks 11, 12. MUST come from conda, not pip: PyPI ships
+                         # vina wheels for Linux only, so pip tries to build from
+                         # source and fails looking for the Boost C++ libraries.
+  # foldseek is NOT listed here on purpose. The bioconda build does not solve
+  # on Apple Silicon. Week 8's notebook detects it and, if absent, points you at
+  # the official binary or the Foldseek web server - both are fine for this course.
+
+  - pip:
+      - py3Dmol
+      - meeko
+      - prolif
+      - chembl-webresource-client
+      - fair-esm
+      # torch is deliberately NOT here. Install the CPU-only build separately:
+      #   pip install torch --index-url https://download.pytorch.org/whl/cpu
+      # The default wheel pulls a CUDA stack you do not need to embed twelve
+      # short peptides, and it is a large download for nothing.
