@@ -69,7 +69,7 @@ Colab for those four. Everything else runs locally.
 
 ## Weeks
 
-### Week 1 — Identifiers, and why they do not match
+### Week 1: Identifiers, and why they do not match
 
 `week01_identifiers_student.ipynb`
 
@@ -90,3 +90,9 @@ to the notebook. Re-download the ZIP and keep the structure.
 **Never `pip install vina`** — on macOS and Windows there is no wheel, so pip tries to
 compile it and fails on a confusing Boost error. It comes from conda on macOS, and on
 Windows it does not exist at all.
+
+### Week 2: Alignment by hand and with computing power
+
+`week02_alignment_student.ipynb`
+
+The math behind BLOSUM62 alignment by hand then with python, comparing different gap penalties, and global vs. local alignment.
