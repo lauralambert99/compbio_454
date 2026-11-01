@@ -1,0 +1,48 @@
+{
+  "built": "2026-11-01",
+  "protein": "P0ABQ4 (DYR_ECOLI), 159 aa",
+  "note": "ColabFold on Colab T4, num_relax=0, templates none, recycles 3",
+  "rungs": {
+    "full": {
+      "label": "full depth (max_msa auto)",
+      "model_file_seen": "dhfr_full_e559b_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb",
+      "pae_file_seen": "dhfr_full_e559b_scores_rank_001_alphafold2_ptm_model_1_seed_000.json",
+      "residues": 159,
+      "plddt_min": 77.38,
+      "plddt_mean": 95.66,
+      "plddt_max": 98.75,
+      "distinct_plddt_values": 87
+    },
+    "128": {
+      "label": "reduced depth, upper rung",
+      "model_file_seen": "dhfr_256_512_e559b.custom_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb",
+      "pae_file_seen": "dhfr_256_512_e559b.custom_scores_rank_001_alphafold2_ptm_model_1_seed_000.json",
+      "residues": 159,
+      "plddt_min": 77.06,
+      "plddt_mean": 95.76,
+      "plddt_max": 98.75,
+      "distinct_plddt_values": 85
+    },
+    "032": {
+      "label": "reduced depth, middle rung",
+      "model_file_seen": "dhfr_64_128_e559b.custom_unrelaxed_rank_001_alphafold2_ptm_model_5_seed_000.pdb",
+      "pae_file_seen": "dhfr_64_128_e559b.custom_scores_rank_001_alphafold2_ptm_model_5_seed_000.json",
+      "residues": 159,
+      "plddt_min": 69.88,
+      "plddt_mean": 95.44,
+      "plddt_max": 98.88,
+      "distinct_plddt_values": 83
+    },
+    "016": {
+      "label": "reduced depth, lowest rung",
+      "model_file_seen": "dhfr_32_16_e559b.custom_unrelaxed_rank_001_alphafold2_ptm_model_3_seed_000.pdb",
+      "pae_file_seen": "dhfr_32_16_e559b.custom_scores_rank_001_alphafold2_ptm_model_3_seed_000.json",
+      "residues": 159,
+      "plddt_min": 83.56,
+      "plddt_mean": 95.85,
+      "plddt_max": 98.75,
+      "distinct_plddt_values": 81
+    }
+  },
+  "a3m_rows": 15262
+}
